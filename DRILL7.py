@@ -55,10 +55,23 @@ class Ball:
         else:
             self.image = load_image('ball41x41.png')
             self.balltype = 1
+
     def update(self):
-        pass
+
+        if self.balltype == 0:
+            if self.y <= 60:
+                self.y = 60
+            else:
+                self.y -= self.speed
+        elif self.balltype == 1:
+            if self.y <= 65:
+                self.y = 65
+            else:
+                self.y -= self.speed
+
     def draw(self):
-        pass
+        self.image.draw(self.x, self.y)
+
 
 def reset_world():
     global running
@@ -72,6 +85,9 @@ def reset_world():
 
     team = [Boy() for i in range(10)]
     gameobjs += team
+
+    balls = [Ball() for i in range(20)]
+    gameobjs += balls
 
 
 def update_world():
