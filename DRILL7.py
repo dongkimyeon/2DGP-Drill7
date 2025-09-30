@@ -2,6 +2,15 @@ from pico2d import *
 import random
 
 
+class Grass:
+    pass
+class Boy:
+    pass
+class Zombie:
+    pass
+class Ball:
+    pass
+
 def reset_world():
     global running
     running = True
@@ -13,7 +22,7 @@ def render_world():
     pass
 
 def handle_events():
-    pass    
+    pass
 
 
 
