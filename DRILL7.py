@@ -29,13 +29,18 @@ class Boy:
     pass
 class Zombie:
     def __init__(self):
-        self.x, self.y = 100, 220
+        self.x, self.y = 100, 300
         self.frame = 0
         self.image = load_image('zombie_run_animation.png')
+
     def update(self):
-        pass
+        self.frame = (self.frame + 1) % 10
+        self.x += 5
+
     def draw(self):
-        pass
+        frame_width = self.image.w // 10
+        frame_hight = self.image.h
+        self.image.clip_draw(self.frame * frame_width, 0, frame_width, frame_hight, self.x, self.y)
 
 class Ball:
     pass
@@ -46,6 +51,10 @@ def reset_world():
     running = True
     newGrass = Grass()
     gameobjs.append(newGrass)
+
+    newZombie = Zombie()
+    gameobjs.append(newZombie)
+
     team = [Boy() for i in range(10)]
     gameobjs += team
 
