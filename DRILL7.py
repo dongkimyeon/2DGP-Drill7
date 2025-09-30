@@ -28,7 +28,15 @@ class Boy:
 
     pass
 class Zombie:
-    pass
+    def __init__(self):
+        self.x, self.y = 100, 220
+        self.frame = 0
+        self.image = load_image('zombie_run_animation.png')
+    def update(self):
+        pass
+    def draw(self):
+        pass
+
 class Ball:
     pass
 
