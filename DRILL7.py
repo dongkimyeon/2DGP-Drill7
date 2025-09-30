@@ -71,7 +71,7 @@ class Ball:
 
     def draw(self):
         self.image.draw(self.x, self.y)
-
+#제출용 커밋 
 
 def reset_world():
     global running
