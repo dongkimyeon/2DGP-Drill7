@@ -5,6 +5,14 @@ import random
 class Grass:
     pass
 class Boy:
+    def __init__(self):
+        self.x, self.y = random.randint(0, 800), 90
+        self.frame = 0
+        self.image = load_image('run_animation.png')
+    def update(self):
+        pass
+    def draw(self):
+        pass
     pass
 class Zombie:
     pass
