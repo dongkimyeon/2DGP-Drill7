@@ -4,7 +4,15 @@ import random
 
 gameobjs = []
 class Grass:
-    pass
+    def __init__(self):
+        self.image = load_image('grass.png')
+
+    def draw(self):
+        self.image.draw(400, 30)
+
+    def update(self):
+        pass
+
 class Boy:
     def __init__(self):
         self.x, self.y = random.randint(0, 800), 90
@@ -28,7 +36,8 @@ def reset_world():
     global running
     global gameobjs
     running = True
-
+    newGrass = Grass()
+    gameobjs.append(newGrass)
     team = [Boy() for i in range(10)]
     gameobjs += team
 
