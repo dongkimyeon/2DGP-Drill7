@@ -43,7 +43,22 @@ class Zombie:
         self.image.clip_draw(self.frame * frame_width, 0, frame_width, frame_hight, self.x, self.y)
 
 class Ball:
-    pass
+    def __init__(self):
+        self.x, self.y = random.randint(0, 800), 599
+        self.speed = random.randint(5, 20)
+        self.image = None
+        self.balltype = None
+
+        if (random.randint(0, 1) == 0):
+            self.image = load_image('ball21x21.png')
+            self.balltype = 0
+        else:
+            self.image = load_image('ball41x41.png')
+            self.balltype = 1
+    def update(self):
+        pass
+    def draw(self):
+        pass
 
 def reset_world():
     global running
